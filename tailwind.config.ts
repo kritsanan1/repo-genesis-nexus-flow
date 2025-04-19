@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				github: {
+					dark: '#0A192F',
+					light: '#172A45',
+					accent: '#64FFDA',
+					text: '#CCD6F6',
+					muted: '#8892B0',
+					success: '#2EA043',
+					warning: '#F2A365',
+					error: '#E83151',
+					purple: '#6E5494',
+					orange: '#F97316',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
