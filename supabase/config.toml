@@ -1,0 +1,8 @@
+
+project_id = "yrljnzlngioiydiimnle"
+
+[functions.handle-profile]
+verify_jwt = true
+
+[functions.generate-content]
+verify_jwt = false
