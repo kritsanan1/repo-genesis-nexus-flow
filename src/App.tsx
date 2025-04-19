@@ -10,8 +10,18 @@ import Library from "./pages/Library";
 import PromptEditor from "./pages/PromptEditor";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Search from "./pages/Search";
+import Repository from "./pages/Repository";
+import RepoDetails from "./pages/RepoDetails";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -25,6 +35,9 @@ const App = () => (
           <Route path="/library" element={<Library />} />
           <Route path="/editor/:id" element={<PromptEditor />} />
           <Route path="/about" element={<About />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/repo/:owner/:repo" element={<Repository />} />
+          <Route path="/details" element={<RepoDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -1,44 +1,39 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <div className="border-b">
-      <div className="flex h-16 items-center px-4 container">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">P</span>
+    <nav className="border-b">
+      <div className="container px-4 h-14 flex items-center justify-between">
+        <div className="flex items-center gap-6">
+          <Link to="/" className="font-bold text-xl">
+            Repo Genesis
+          </Link>
+          <div className="hidden md:flex items-center gap-4">
+            <Link to="/dashboard" className="text-sm font-medium hover:text-primary">
+              Dashboard
+            </Link>
+            <Link to="/library" className="text-sm font-medium hover:text-primary">
+              Library
+            </Link>
+            <Link to="/search" className="text-sm font-medium hover:text-primary">
+              Search
+            </Link>
+            <Link to="/about" className="text-sm font-medium hover:text-primary">
+              About
+            </Link>
           </div>
-          <span className="font-bold text-xl">PromptWeaver</span>
-        </Link>
-        <div className="ml-auto flex items-center space-x-4">
-          <div className="relative w-64">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search prompts..."
-              className="w-full pl-8"
-            />
-          </div>
-          <Button variant="ghost" asChild>
-            <Link to="/dashboard">Dashboard</Link>
-          </Button>
-          <Button variant="ghost" asChild>
-            <Link to="/library">Library</Link>
-          </Button>
-          <Button variant="ghost" asChild>
-            <Link to="/about">About</Link>
-          </Button>
-          <Button asChild>
-            <Link to="/editor/new">Create Prompt</Link>
-          </Button>
         </div>
+        <Button size="sm" variant="outline" asChild>
+          <Link to="/search">
+            <Search className="h-4 w-4 mr-2" />
+            Search Repos
+          </Link>
+        </Button>
       </div>
-    </div>
+    </nav>
   );
 };
 
